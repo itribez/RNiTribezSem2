@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "jsx": "react-native",
+    "lib": ["es2017"],
+    "moduleResolution": "node",
+    "noEmit": true,
+    "strict": true,
+    "target": "esnext",
+    // If you're using absolute imports, you can uncomment the following lines:
+    // "baseUrl": "./",
+    // "paths": {
+    //   "*": ["src/*"]
+    // },
+    // Ensure that *.tsx? files are included for type checking:
+    "resolveJsonModule": true
+  },
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js"
+  ],
+  // Include all relevant source files for type checking:
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "typings.d.ts"
+]
+}
