@@ -24,8 +24,15 @@ const CreateAccount = ({ navigation }: RegistrationScreenProps) => {
       return;
     }
   
-    await AuthService.register(email, password);
+    const result = await AuthService.register(email, password);
   
+    if (result.success) {
+      navigation.navigate('App', { screen: 'Welcome' }); 
+      Alert.alert('Registration successful!');
+    } else {
+      Alert.alert(`Registration failed: ${result.message}`);
+    }
+
   };
 
     // Construct the request payload
