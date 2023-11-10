@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 const styles = StyleSheet.create({
   container: {
     width: '100%',
+    marginTop: '15%',
     height: 50,
     paddingHorizontal: 10,
     flexDirection: 'row',
@@ -13,7 +14,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
-    fontWeight: '900',
+    fontWeight: '700',
     color: 'black',
   },
   iconButton: {
@@ -36,11 +37,11 @@ const Header: React.FC<HeaderProps> = ({ headerTitle, iconName }) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity activeOpacity={0.7} onPress={() => true}>
-        <Icon name="arrow-back" size={28} color="#010101" />
+        {/* <Icon name="arrow-back" size={28} color="#010101" /> */}
       </TouchableOpacity>
       <Text style={styles.title}>{headerTitle}</Text>
       <TouchableOpacity activeOpacity={0.7} onPress={() => true}>
-        <Icon name={iconName} size={28} color="#010101" />
+        {/* <Icon name={iconName} size={28} color="#010101" /> */}
       </TouchableOpacity>
     </View>
   );

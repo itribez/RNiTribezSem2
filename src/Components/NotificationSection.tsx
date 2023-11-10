@@ -34,12 +34,12 @@ const IconButton = styled.TouchableOpacity`
 
 
 const TextContainer = styled.View`
-margin-right:80px;
-
+margin-right:30px;
 `;
 const Title = styled .Text`
 fontWeight:400;
 fontSize:20px;
+paddingBottom: 5px
 `;
 const TitleSmall = styled .Text`
 fontWeight:100;
@@ -54,12 +54,13 @@ textAlign:center;
 
 const Button = styled.Pressable`
 broder: 2px solid blue;
-width :100px;
-height:30px;
+width :70px;
+height:25px;
 textAlign:center;
 backgroundColor:transparent;
 borderRadius:30px;
 border:2px solid gray;
+marginRight: 20px
 `;
 const Line  = styled.View`
 text-align:center;
