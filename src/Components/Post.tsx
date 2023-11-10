@@ -164,6 +164,10 @@ const Post = ({ _id, title, content, image, comments, likes, user }: PostProps) 
     <PostContainer>
       <View>
         <PostContainer>
+        <Image
+                source={require('../../assets/staticpost.png')}
+                style={{ width: '100%', height: 100 }}
+              />
           <PostTitle>{title}</PostTitle>
           <PostContent>{content}</PostContent>
           {image && <PostImage source={{ uri: image }} />}

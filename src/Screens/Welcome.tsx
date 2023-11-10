@@ -57,7 +57,7 @@ const Welcome = ({ navigation }: WelcomeScreenProps) => {
 
   return (
     <View style={{ flex: 1, backgroundColor: '#ffff'}}>
-      <View style={{ flexDirection: 'row', paddingTop: 30 }}>
+      <View style={{ flexDirection: 'row', paddingTop: 20 }}>
         <Image
           source={require('../../assets/logo.png')}
           style={{ width: 35, height: 35, margin: 20 }}
@@ -75,7 +75,8 @@ const Welcome = ({ navigation }: WelcomeScreenProps) => {
       </View>
       <ScrollView>
         {posts.map((post) => (
-          <View key={post._id} style={{ backgroundColor: 'white', margin: 20, marginTop: -10, borderRadius: 8, overflow: 'hidden' }}>
+          <View key={post._id} style={{ backgroundColor: 'white', margin: 20, marginTop: -15, borderRadius: 10, overflow: 'hidden' }}>
+            
             <Post
               _id={post._id}
               title={post.title}
