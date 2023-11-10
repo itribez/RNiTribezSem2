@@ -169,15 +169,17 @@ const Post = ({ _id, title, content, image, comments, likes, user }: PostProps) 
           {image && <PostImage source={{ uri: image }} />}
           <ActionBar>
             <ActionButton onPress={handleLikeClick}>
-              <MaterialIcons
-                name='thumb-up'
-                size={24}
-                color={liked ? 'blue' : 'black'}
+            <Image
+                source={liked ? require('../../assets/liked.png') : require('../../assets/heart.png')}
+                style={{ width: 24, height: 24, marginRight: 5, tintColor: liked ? 'red' : 'black' }}
               />
               <ActionText>Like ({likeCount})</ActionText>
             </ActionButton>
             <ActionButton onPress={toggleCommentsModal}>
-              <MaterialIcons name="comment" size={24} color="black" />
+            <Image
+                source={require('../../assets/comment.png')}
+                style={{ width: 24, height: 24, marginRight: 5 }}
+              />
               <ActionText>Comment</ActionText>
             </ActionButton>
           </ActionBar>
@@ -195,6 +197,7 @@ const Post = ({ _id, title, content, image, comments, likes, user }: PostProps) 
               borderTopRightRadius: 20,
               padding: 20,
               maxHeight: 500,
+              height: '20%',
               flexDirection: 'column',
             }}
           >
@@ -219,12 +222,13 @@ const Post = ({ _id, title, content, image, comments, likes, user }: PostProps) 
                 </View>
               ))}
             </ScrollView>
-
-            {/* Add a text input and submit button for adding comments */}
             <TextInput
               placeholder="Add a comment"
               onChangeText={(text) => setCommentText(text)}
               value={commentText}
+              style={{
+                marginBottom: '20%'
+              }}
             />
             <TouchableOpacity onPress={() => createComment(commentText)}>
               <Text>Submit</Text>

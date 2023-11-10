@@ -1,10 +1,15 @@
 import SplashScreen from 'react-native-splash-screen';
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, StatusBar } from 'react-native';
+import { StyleSheet, Text, View, StatusBar,Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/Ionicons';
+// import homeIcon from './assets/home.png';
+// import addIcon from './assets/createpost.png';
+// import notificationsIcon from './assets/notifications.png';
+// import personIcon from './assets/profile1.png';
+
 
 import LoginScreen from './src/Screens/LoginScreen';
 import CreateAccount from './src/Screens/CreateAccount';
@@ -75,20 +80,23 @@ const AppTabs: React.FC = () => {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }}>
       <Tab.Screen 
-        name="Welcome" 
+        name="Home" 
         component={Welcome}
-        
         options={{
-          tabBarIcon: ({ color }) => <Icon name='home' size={30} color={color} />,
+          tabBarIcon: ({ color }) => <Image
+          source={require('./assets/home.png')}  style={{ width: 30, height: 30, tintColor: color }} />,
           tabBarActiveTintColor: 'blue',
           tabBarInactiveTintColor: 'gray',
         }} 
       />
       <Tab.Screen 
-        name="Messages" 
+        name="Create Post" 
         component={ChatScreen} 
         options={{
-          tabBarIcon: ({ color }) => <Icon name='add-outline' size={30} color={color} />,
+          tabBarIcon: ({ color }) =>  
+          <Image
+          source={require('./assets/plus.png')} // Replace with the actual path to your image
+          style={{ width: 25, height: 25, tintColor: color }} />,
           tabBarActiveTintColor: 'blue',
           tabBarInactiveTintColor: 'gray',
         }} 
@@ -97,7 +105,8 @@ const AppTabs: React.FC = () => {
         name="Notification" 
         component={Notification} 
         options={{
-          tabBarIcon: ({ color }) => <Icon name='notifications-outline' size={30} color={color} />,
+          tabBarIcon: ({ color }) => <Image
+          source={require('./assets/notification.png')}  style={{ width: 30, height: 30, tintColor: color }} />,
           tabBarActiveTintColor: 'blue',
           tabBarInactiveTintColor: 'gray',
         }} 
@@ -106,7 +115,8 @@ const AppTabs: React.FC = () => {
         name="Profile" 
         component={Profile}
         options={{
-          tabBarIcon: ({ color }) => <Icon name='person' size={30} color={color} />,
+          tabBarIcon: ({ color }) => <Image
+          source={require('./assets/profile1.png')}  style={{ width: 30, height: 30, tintColor: color }} />,
           tabBarActiveTintColor: 'blue',
           tabBarInactiveTintColor: 'gray',
         }} 
